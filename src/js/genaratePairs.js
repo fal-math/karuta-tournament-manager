@@ -29,7 +29,7 @@ function generatePairs(data, shuffleFn = shuffle) {
   // プレイヤーをシャッフルし、試合用と不戦勝用に分割
   const shuffledPlayers = shuffleFn([...presentMembers]);
   const playersForMatches = shuffledPlayers.slice(0, 2 * numberOfMatches);
-  const walkovers = shuffledPlayers.slice(2 * numberOfMatches);
+  const walkovers = shuffledPlayers.slice(2 * numberOfMatches).map(player => [player]);
 
   // pairsは [ [選手A, 選手B], [選手C, 選手D], ... ] の形式
   const pairs = Array.from({ length: numberOfMatches }, () => [null, null]);
@@ -122,5 +122,5 @@ function generatePairs(data, shuffleFn = shuffle) {
     assignPlayer(player);
   }
 
-  return {pairs,walkovers};
+  return pairs.concat(walkovers);
 }
