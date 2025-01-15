@@ -115,7 +115,7 @@ export const pairService = {
       assignPlayer(player);
     }
 
-    return pairs.concat(walkovers);
+    return [...pairs, ...walkovers];
   },
 
   // n以下の最大の2の冪を返す

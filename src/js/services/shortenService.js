@@ -2,9 +2,9 @@
 
 export const shortenService = {
   // 所属を短縮する
-  shortenAffiliation(affiliation, length = 6) {
+  shortenAffiliation(affiliation, length = 5) {
     if (!affiliation) return '';
-    return affiliation.length > length
+    return affiliation.length > length+1
       ? affiliation.slice(0, length) + '…'
       : affiliation;
   },
