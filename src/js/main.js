@@ -15,6 +15,12 @@ function init() {
   uiManager.toggleAffiliationShorten().addEventListener('change', onToggleAffiliationShorten);
   uiManager.downloadImageButton().addEventListener('click', onDownloadImageClick);
   uiManager.downloadCSVButton().addEventListener('click', onDownloadCSVClick);
+
+  uiManager.validateButton().disabled = true;
+  uiManager.generateButton().disabled = true;
+  uiManager.downloadImageButton().disabled = true;
+  uiManager.downloadCSVButton().disabled = true;
+  console.debug("initialized")
 }
 
 // --------------------------------------------------
